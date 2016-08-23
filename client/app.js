@@ -18,6 +18,8 @@ angular.module('MeetUpAPI', [])
         alert('Please select a category');
       } else if (zipcode === undefined) {
         alert('Please enter a zip code');
+      } else if ( zipcode.match(/[a-z]/i) ) {
+        alert('Please enter a valid zip code');
       } else {
         $http.get('/api/groups', {params: {category_id: $scope.selected.id, zip: $scope.zipcode}})
           .success(function(data) {
@@ -27,18 +29,6 @@ angular.module('MeetUpAPI', [])
           .error(function(errorData) {
             console.log('Error: ' + errorData);
           });
-        };
-
       }
-      // if (data === 'both') {
-      //       alert('Please select a category and enter zip code');
-      //     } else if (data === 'no-category') {
-      //       alert('Please select a category');
-      //     } else if (data === 'no-zip-code') {
-      //       alert('Please enter a zip code');
-      //     } else {
-      //       $scope.groups = data;
-      //       $scope.groupTable = false;
-      //     }
-      
+    }  
 });
