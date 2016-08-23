@@ -1,27 +1,29 @@
 body {
   font-size: 18px;
   font-family: Helvetica, Arial, Sans-Serif;
-  
 }
 
+/*
+    MAIN WRAPPER
+*/
 #main-container {
   width: 65%;
   margin: 0 auto;
   text-align: center;
 }
 
+/*
+    SEARCH FORM
+*/
 .main-search-form {
-  /*border: 2px solid black;*/
   border-radius: 12px;
   padding: 15px;
   background: #ed1c40;
 }
 
 label {
-  /*display: inline-block;*/
   width: 40%;
   padding: 16px 8px;
-  /*border: 1px solid black;*/
   margin: 0 auto;
   margin-right: 10px;
 }
@@ -47,6 +49,9 @@ label {
   font-weight: bold;
 }
 
+/*
+    SEARCH RESULTS DATA TABLE
+*/
 .main-search-table {
   margin-top: 20px;
   border-collapse: collapse;
@@ -61,11 +66,15 @@ label {
 .main-search-table td {
   border: 1px solid black;
 }
+
 .main-search-table th,
 .main-search-table td {
   padding: 5px 10px;
 }
 
+/*
+    HANDLE LONG STRINGS IN DATA TABLE
+*/
 .main-search-table td {
   width: 15%;
   /* These are technically the same, but use both */
@@ -87,4 +96,3 @@ label {
   width: 70%;
   text-align: left;
 }
-
