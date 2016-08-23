@@ -26,6 +26,8 @@ app.get('/api/groups', function(req, res) {
   request({url: urlAPI}, function (error, response, body) {
     if (!error && response.statusCode == 200) {
       res.send(body);
+    } else {
+      console.log('ERROR: ', error);
     }
   });
 });

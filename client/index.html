@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Meetup-togo</title>
   </head>
@@ -13,8 +14,9 @@
       
       <label>
         <!-- Category: -->
-        <select ng-model="selected">
-          <option ng-repeat="option in category.results | orderBy: 'id'"  value="{{option.id}}">{{option.name}}</option>
+        <select ng-options="option.name for option in category.results | orderBy: 'id'" ng-model="selected">
+          <!-- <option ng-repeat="option in category.results | orderBy: 'id'"  value="{{option.id}}">{{option.name}}</option> -->
+          <option value="">---Select Category---</option>
         </select>
       </label>
 
