@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="MeetUpAPI">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meetup-togo</title>
+  </head>
+  <body>
+    <h1>Meetup-togo</h1>
+
+    <div ng-controller="CategoryController">
+      Category:
+      <select ng-model="selected">
+
+      <option ng-repeat="option in category.results | orderBy: 'id'" value="{{option.id}}">{{option.name}}</option>
+        <!-- <option ng-repeat="category in category.results | orderBy:'id'" ng-model="selected" value="{{category.id}}">
+          {{ category.name }}
+        </option> -->
+
+        <!-- <option ng-options="cat_name as cat_name.name in category.results">{{cat_name}}</option> -->
+
+         <!-- ng-options="cat_nam as category.results.name and cat_id as category.results.id in category.results" -->
+
+      </select>
+
+      Zip Code: <input type="text" name="zip-code" ng-model="zipcode" />
+
+      <button ng-click="findGroup(zipcode, selected)">Meetup!</button>
+
+
+      <p>&nbsp;</p>
+      <table border="1" ng-hide="groupTable">
+        <thead>
+          <th>Group Name</th>
+          <th>Group Members</th>
+          <th>Description</th>
+        </thead>
+        <tbody ng-repeat="group in groups.results">
+          <tr>
+            <td><a href="{{ group.link }}" target="_blank">{{ group.name}}</a></td>
+            <td>{{ group.members }}</td>
+            <td>{{ group.description }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <!-- <p>
+        Group Name: <a href="{{ groups.results[0].link }}" target="_blank">{{ groups.results[0].name}}</a>
+      </p>
+      <p>
+        Group Members: {{ groups.results[0].members }}
+      </p>
+      <p>
+        Group Link: <a href="{{ groups.results[0].link }}" target="_blank">Meetup Group Page</a>
+      </p>
+      <p>
+        Group Description: {{ groups.results[0].description }}
+      </p> -->
+    </div>
+
+    <!-- Scripts -->
+    <!-- <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-route/angular-route.js"></script> -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
