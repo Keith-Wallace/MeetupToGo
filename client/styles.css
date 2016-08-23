@@ -1,4 +1,72 @@
 body {
   font-size: 18px;
   font-family: Helvetica, Arial, Sans-Serif;
+  
 }
+
+#main-container {
+  width: 65%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.main-search-form {
+  /*border: 2px solid black;*/
+  border-radius: 12px;
+  padding: 15px;
+  background: #ed1c40;
+}
+
+label {
+  /*display: inline-block;*/
+  width: 40%;
+  padding: 16px 8px;
+  border: 1px solid black;
+  margin: 0 auto;
+  margin-right: 10px;
+}
+
+.main-search-form select {
+  font-size: 24px;
+}
+
+.main-search-form input {
+  font-size: 18px;
+  padding: 4px 8px;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.main-search-form button {
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: #fff;
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.main-search-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  table-layout: fixed;
+  background: #fff;
+}
+
+.main-search-table table,
+.main-search-table th,
+.main-search-table td {
+  border: 1px solid black;
+}
+
+.main-search-table td {
+  word-wrap: break-word;
+  width: 15%;
+}
+
+.main-search-table td:last-child {
+  width: 70%;
+}
+

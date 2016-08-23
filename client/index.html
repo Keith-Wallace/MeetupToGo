@@ -6,58 +6,40 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Meetup-togo</title>
   </head>
-  <body>
-    <h1>Meetup-togo</h1>
+  <body id="main-container">
+    <h1>Meetup-<i>togo</i></h1>
 
-    <div ng-controller="CategoryController">
-      Category:
-      <select ng-model="selected">
+    <div class="main-search-form" ng-controller="CategoryController">
+      
+      <label>
+        <!-- Category: -->
+        <select ng-model="selected">
+          <option ng-repeat="option in category.results | orderBy: 'id'"  value="{{option.id}}">{{option.name}}</option>
+        </select>
+      </label>
 
-      <option ng-repeat="option in category.results | orderBy: 'id'" value="{{option.id}}">{{option.name}}</option>
-        <!-- <option ng-repeat="category in category.results | orderBy:'id'" ng-model="selected" value="{{category.id}}">
-          {{ category.name }}
-        </option> -->
-
-        <!-- <option ng-options="cat_name as cat_name.name in category.results">{{cat_name}}</option> -->
-
-         <!-- ng-options="cat_nam as category.results.name and cat_id as category.results.id in category.results" -->
-
-      </select>
-
-      Zip Code: <input type="text" name="zip-code" ng-model="zipcode" />
+      <label>
+        <input placeholder="Enter Zip Code" type="text" name="zip-code" ng-model="zipcode" />
+      </label>
 
       <button ng-click="findGroup(zipcode, selected)">Meetup!</button>
 
 
       <p>&nbsp;</p>
-      <table border="1" ng-hide="groupTable">
+      <table class="main-search-table" ng-hide="groupTable">
         <thead>
           <th>Group Name</th>
           <th>Group Members</th>
           <th>Description</th>
         </thead>
-        <tbody ng-repeat="group in groups.results">
-          <tr>
+        <tbody>
+          <tr ng-repeat="group in groups.results">
             <td><a href="{{ group.link }}" target="_blank">{{ group.name}}</a></td>
             <td>{{ group.members }}</td>
             <td>{{ group.description }}</td>
           </tr>
         </tbody>
       </table>
-
-
-      <!-- <p>
-        Group Name: <a href="{{ groups.results[0].link }}" target="_blank">{{ groups.results[0].name}}</a>
-      </p>
-      <p>
-        Group Members: {{ groups.results[0].members }}
-      </p>
-      <p>
-        Group Link: <a href="{{ groups.results[0].link }}" target="_blank">Meetup Group Page</a>
-      </p>
-      <p>
-        Group Description: {{ groups.results[0].description }}
-      </p> -->
     </div>
 
     <!-- Scripts -->
