@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< ad4a71e5e2e3966679c09cfc2197115d8a9f229f
 
 # MVP (Solo) Project
@@ -26,3 +27,7 @@
 # MeetupToGo
 MVP Project using Meetup's Public API
 >>>>>>> Initial commit
+=======
+# MeetupToGo
+MVP Project using Meetup's Public API
+>>>>>>> cd08c5190a196fbfca2e47d9a6abf05081f6e3a9
