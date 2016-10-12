@@ -4,6 +4,7 @@
   "description": "MKS-46 full-stack MVP project: Meetup App",
   "main": "server.js",
   "scripts": {
+    "start": "node ./server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

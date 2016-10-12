@@ -45,4 +45,4 @@ app.get('/*', function(req, res) {
 
 // LISTEN FOR ANY REQUESTS TO OUR SERVER
 app.listen(process.env.PORT || 8000);
-console.log("App listening on port 8080");
+console.log("App listening on port 8000");
