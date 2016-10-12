@@ -1,3 +1,4 @@
+<<<<<<< ad4a71e5e2e3966679c09cfc2197115d8a9f229f
 
 # MVP (Solo) Project
 
@@ -21,3 +22,7 @@
 
 - [ ] Storage - if your app persists data, use a tool like Firebase or MongoDB. 
 - [ ] Style - if and only if - app is complete. 
+=======
+# MeetupToGo
+MVP Project using Meetup's Public API
+>>>>>>> Initial commit
