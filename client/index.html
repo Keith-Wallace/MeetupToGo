@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="MeetUpAPI">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Meetup-togo</title>
+  </head>
+  <body id="main-container">
+    <h1>Meetup-<i>togo</i></h1>
+
+    <div class="main-search-form" ng-controller="CategoryController">
+      <!-- CATEGORY DROP DOWN MENU -->
+      <label>
+        <select ng-options="option.name for option in category.results | orderBy: 'id'" ng-model="selected">
+          <!-- <option ng-repeat="option in category.results | orderBy: 'id'"  value="{{option.id}}">{{option.name}}</option> -->
+          <option value="">---Select Category---</option>
+        </select>
+      </label>
+
+      <!-- ZIP CODE -->
+      <label>
+        <input placeholder="Enter Zip Code" type="text" name="zip-code" ng-model="zipcode" />
+      </label>
+
+      <!--
+            SEARCH SUBMISSION
+            HANLDED BY APP'S CONTROLLER
+      -->
+      <button ng-click="findGroup(zipcode, selected)">Meetup!</button>
+
+      <!-- GROUP SEARCH RESULTS TABLE -->
+      <table class="main-search-table" ng-hide="groupTable">
+        <thead>
+          <th>Group Name</th>
+          <th>Group Members</th>
+          <th>Description</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="group in groups.results">
+            <td><a href="{{ group.link }}" target="_blank">{{ group.name}}</a></td>
+            <td>{{ group.members }}</td>
+            <td>{{ group.description }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Scripts -->
+    <!-- <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-route/angular-route.js"></script> -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js"></script>
+    <!-- ENTRY POINT TO OUR FRONT-END APPLICATION -->
+    <script src="app.js"></script>
+  </body>
+</html>

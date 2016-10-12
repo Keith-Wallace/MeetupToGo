@@ -1,0 +1,32 @@
+{
+  "name": "mks-solo",
+  "version": "1.0.0",
+  "description": "MKS-46 full-stack MVP project: Meetup App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keith-Wallace/MKS-solo.git"
+  },
+  "author": "Keith Wallace",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Keith-Wallace/MKS-solo/issues"
+  },
+  "homepage": "https://github.com/Keith-Wallace/MKS-solo#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.10.2",
+    "request": "^2.74.0"
+  },
+  "engines": {
+    "node": "4.5.0"
+  } 
+}
